@@ -66,6 +66,6 @@ combined<-reshape2::melt(data=combined, id = c("SubjectNumber","Activity"),na.rm
 
 combined<-reshape2::dcast(data=combined,SubjectNumber + Activity ~ variable, fun.aggregate = mean)
 
-data.table::fwrite(x = combined, file = "tidyDataSet.txt", quote = FALSE)
+data.table::fwrite(x = combined, file = "tidyDataSet.txt", quote = FALSE,row.names = FALSE)
 
 
